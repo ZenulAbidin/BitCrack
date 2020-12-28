@@ -13,12 +13,13 @@ CXX=g++
 CXXFLAGS=-O2 -std=c++11 -w
 
 # CUDA variables
-NVCC=nvcc
-NVCCFLAGS=-std=c++11 -Xptxas="-v" -Xcompiler "${CXXFLAGS}"
 CUDA_HOME=/usr/local/cuda
 CUDA_LIB=${CUDA_HOME}/lib64
 CUDA_INCLUDE=${CUDA_HOME}/include
 CUDA_MATH=$(CUR_DIR)/cudaMath
+NVCC=${CUDA_HOME}/bin/nvcc
+NVCCFLAGS=-std=c++11 -Xptxas="-v" -Xcompiler "${CXXFLAGS}"
+
 
 # OpenCL variables
 OPENCL_LIB=${CUDA_LIB}
